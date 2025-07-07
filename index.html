@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container py-5">
+    <h1 class="text-center mb-4">Job Application Tracker</h1>
+    <div class="text-end mb-3">
+        <button id="darkModeToggle" class="btn btn-outline-dark">
+            Toggle Dark Mode
+        </button>
+    </div>
+    <div class="card shadow-sm mb-5">
+        <div class="card-header bg-primary text-white">Add New Application</div>
+        <div class="card-body">
+            <form id="applicationForm" class="row g-3">
+                <div class="col-md-6">
+                    <label for="company" class="form-label">Company</label>
+                    <input type="text" class="form-control" id="company" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="position" class="form-label">Position</label>
+                    <input type="text" class="form-control" id="position" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="date" class="form-label">Date Applied</label>
+                    <input type="date" class="form-control" id="date" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="status" class="form-label">Status</label>
+                    <select class="form-select" id="status" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Applied</option>
+                        <option>Interview</option>
+                        <option>Offer</option>
+                        <option>Rejected</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="notes" class="form-label">Notes</label>
+                    <textarea class="form-control" id="notes" rows="2"></textarea>
+                </div>
+                <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-success">Add Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">Saved Applications</div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-striped m-0">
+                    <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="jobTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
